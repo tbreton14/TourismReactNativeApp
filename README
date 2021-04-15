@@ -1,0 +1,20 @@
+Pour développer avec React Native, vous allez avoir besoin de Node.js.
+
+Ensuite on va utiliser un CRNA : Expo
+npm install -g expo-cli
+
+Expo
+En plus de nous procurer un outil de développement d’application React Native, Expo nous offre une application hôte. 
+Cette application va nous permettre d'exécuter et d'afficher le rendu de nos applications pendant les phases de développement. 
+C’est fou tout ce qu’Expo peut faire pour nous !
+
+Installer les paquets
+npm install
+
+Lancer le projet
+npm start
+
+
+Ensuite vous pouvez soit utiliser un emulateur soit télécharger l'application Expo Go sur votre smartphone
+
+http://localhost:19002 => Permet de voir dans un navigateur ce qui se passe et avoir accès au QR Code pour lancer l'appli sur votre tél
