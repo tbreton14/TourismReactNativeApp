@@ -9,9 +9,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './components/HomeScreen';
 import RestaurantsScreen from './components/RestaurantsScreen';
-import RestaurantsDetailsScreen from './components/RestaurantsDetailsScreen';
-import LoisirsScreen from './components/LoisirsScreen';
-import HotelsScreen from './components/HotelsScreen';
 
 const Stack = createStackNavigator();
 
@@ -22,8 +19,6 @@ function App() {
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="RestaurantsScreen" component={RestaurantsScreen} options={{ title: 'Liste des restaurants' }} />
                 <Stack.Screen name="RestaurantsDetailsScreen" component={RestaurantsDetailsScreen} options={{ title: 'Détails' }} />
-                <Stack.Screen name="HotelsScreen" component={HotelsScreen} options={{ title: 'Liste des hébergements' }} />
-                <Stack.Screen name="LoisirsScreen" component={LoisirsScreen} options={{ title: 'Liste des activités' }} />
             </Stack.Navigator>
         </NavigationContainer>
     );
