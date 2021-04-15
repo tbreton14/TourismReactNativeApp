@@ -52,21 +52,9 @@ class HomeScreen extends React.Component {
                             <View style={styles.viewHomeText}>
                                 <Text style={{fontSize: 30, color: '#FFFFFF'}}>Hébergements</Text>
                             </View>
-                            <ImageBackground source={require("../assets/hotels.jpg")} style={styles.homeImage}
-                                             resizeMode='cover'/>
                         </TouchableOpacity>
                     </View>
 
-                    <View style={{flex: 1}}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('LoisirsScreen')}
-                                          style={styles.homeButton}>
-                            <View style={styles.viewHomeText}>
-                                <Text style={{fontSize: 30, color: '#FFFFFF'}}>Activités</Text>
-                            </View>
-                            <ImageBackground source={require("../assets/loisirs.jpg")} style={styles.homeImage}
-                                             resizeMode='cover'/>
-                        </TouchableOpacity>
-                    </View>
                 </View>
                 <StatusBar style="auto"/>
             </View>
