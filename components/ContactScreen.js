@@ -1,12 +1,15 @@
 import React from 'react'
 import axios from 'axios'
 import { View, TextInput, Button, FlatList, Text, Platform, Linking } from 'react-native'
-import { Field, reduxForm } from 'redux-form'
+import ContactForm from "./ContactForm";
 
 class ContactScreen extends React.Component {
 
-    constructor(props){
-        super(props);
+    submit = values => {
+        // print the form values to the console
+        console.log(values)
+
+        alert("Votre message a été envoyé")
     }
 
     render() {
@@ -14,15 +17,11 @@ class ContactScreen extends React.Component {
         const { email } = this.props.route.params;
         const { navigate } = this.props.navigation;
 
-
         return (
             <View style={{flex: 1}}>
                 <Text style={{textAlign: 'center'}}>Formulaire de contact</Text>
                 <View style={{flex: 1, marginTop: 50}}>
-                    <form onSubmit={() => ""}>
-
-                        <button type="submit">Submit</button>
-                    </form>
+                    <ContactForm onSubmit={this.submit} />
                 </View>
             </View>
         )

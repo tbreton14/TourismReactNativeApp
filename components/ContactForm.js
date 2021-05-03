@@ -1,39 +1,58 @@
 import React, { Component } from 'react'
 import {Field, reduxForm} from 'redux-form'
+import { Text, Button, TextInput, View } from 'react-native'
 
-class ContactForm extends React.Component {
+class ContactForm extends Component {
     render() {
-        const {
-            fields: { firstName, lastName, email, message },
-            handleSubmit
-        } = this.props
-
         return (
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="firstName">First Name</label>
-                    <Field name="firstName" component="input" type="text" />
-                </div>
-                <div>
-                    <label htmlFor="lastName">Last Name</label>
-                    <Field name="lastName" component="input" type="text" />
-                </div>
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <Field name="email" component="input" type="email" />
-                </div>
-                <div>
-                    <label htmlFor="message">Message</label>
-                    <Field name="message" component="input" type="textarea" />
-                </div>
+            <View style={{padding: 15}}>
+                <Field
+                    name="firstName"
+                    label="firstName"
+                    placeholder="Prénom"
+                    textContentType="firstName"
+                    autoCorrect={false}
+                    autoCapitalize="none"
+                    component={TextInput}
+                    style={{backgroundColor: 'white', paddingLeft: 15, height: 40, marginBottom: 15}}
+                />
+                <Field
+                    name="lastName"
+                    placeholder="Nom"
+                    textContentType="lastName"
+                    autoCorrect={false}
+                    autoCapitalize="none"
+                    component={TextInput}
+                    style={{backgroundColor: 'white', paddingLeft: 15, height: 40, marginBottom: 15}}
+                />
+                <Field
+                    name="email"
+                    placeholder="Email"
+                    textContentType="email"
+                    autoCorrect={false}
+                    autoCapitalize="none"
+                    component={TextInput}
+                    style={{backgroundColor: 'white', paddingLeft: 15, height: 40, marginBottom: 15}}
+                />
+                <Field
+                    name="message"
+                    placeholder="Message"
+                    textContentType="message"
+                    autoCorrect={false}
+                    autoCapitalize="none"
+                    component={TextInput}
+                    multiLine={true}
+                    rows={5}
+                    style={{backgroundColor: 'white', paddingLeft: 15, height: 200, marginBottom: 15}}
+                />
+                <Button title="Submit" full warning rounded onPress={this.props.handleSubmit}>
 
-                <button type="submit">Submit</button>
-            </form>
+                </Button>
+            </View>
         )
     }
 }
 
 export default reduxForm({
-    form: 'contactForm',
-    fields: ['firstName', 'lastName', 'email', 'message']
-})(MyForm)
+    form: "contact",
+})(ContactForm);

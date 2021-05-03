@@ -15,23 +15,27 @@ import HotelsScreen from './components/HotelsScreen'
 import HotelsDetailsScreen from './components/HotelsDetailsScreen';
 import LoisirsDetailsScreen from './components/LoisirsDetailsScreen';
 import ContactScreen from './components/ContactScreen';
+import { store } from "./store/configureStore";
+import { Provider } from "react-redux";
 
 const Stack = createStackNavigator();
 
 function App() {
     return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="RestaurantsScreen" component={RestaurantsScreen} options={{ title: 'Liste des restaurants' }} />
-                <Stack.Screen name="RestaurantsDetailsScreen" component={RestaurantsDetailsScreen} options={{ title: 'Détails' }} />
-                <Stack.Screen name="HotelsScreen" component={HotelsScreen} options={{ title: 'Liste des hébergements' }} />
-                <Stack.Screen name="HotelsDetailsScreen" component={HotelsDetailsScreen} options={{ title: 'Détails' }} />
-                <Stack.Screen name="LoisirsScreen" component={LoisirsScreen} options={{ title: 'Liste des activités' }} />
-                <Stack.Screen name="LoisirsDetailsScreen" component={LoisirsDetailsScreen} options={{ title: 'Détails' }} />
-                <Stack.Screen name="ContactScreen" component={ContactScreen} options={{ title: 'Contact' }} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <Provider store={store}>
+            <NavigationContainer>
+                <Stack.Navigator>
+                    <Stack.Screen name="Home" component={HomeScreen} />
+                    <Stack.Screen name="RestaurantsScreen" component={RestaurantsScreen} options={{ title: 'Liste des restaurants' }} />
+                    <Stack.Screen name="RestaurantsDetailsScreen" component={RestaurantsDetailsScreen} options={{ title: 'Détails' }} />
+                    <Stack.Screen name="HotelsScreen" component={HotelsScreen} options={{ title: 'Liste des hébergements' }} />
+                    <Stack.Screen name="HotelsDetailsScreen" component={HotelsDetailsScreen} options={{ title: 'Détails' }} />
+                    <Stack.Screen name="LoisirsScreen" component={LoisirsScreen} options={{ title: 'Liste des activités' }} />
+                    <Stack.Screen name="LoisirsDetailsScreen" component={LoisirsDetailsScreen} options={{ title: 'Détails' }} />
+                    <Stack.Screen name="ContactScreen" component={ContactScreen} options={{ title: 'Contact' }} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        </Provider>
     );
 }
 
